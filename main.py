@@ -50,21 +50,20 @@ class tiktok:
                 self.available += 1
                 self.print_console("Available", username, Fore.GREEN)
             self.update_title()
-        
+ 
     def load_usernames(self):
-        if os.path.exists("usernames.txt"):
-            with open("usernames.txt", "r", encoding = "UTF-8") as f:
-                for line in f.readlines():
-                    line = line.replace("\n", "")
-                    self.usernames.append(line)
-            if not len(self.usernames):
-                self.print_console("Console", "No usernames loaded in usernames.txt")
-                time.sleep(20)
-                os._exit(0)
-        else:
-            self.print_console("Console", "File usernames.txt not found")
-            time.sleep(20)
+        if not os.path.exists("usernames.txt"):
+            self.print_console("File usernames.txt not found")
+            time.sleep(10)
             os._exit(0)
+        with open("usernames.txt", "r", encoding = "UTF-8") as f:
+            for line in f.readlines():
+                line = line.replace("\n", "")
+                self.usernames.append(line)
+            if not len(self.usernames):
+                self.print_console("No usernames loaded in proxies.txt")
+                time.sleep(10)
+                os._exit(0)
 
     
     def main(self):
