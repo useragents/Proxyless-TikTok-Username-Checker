@@ -59,12 +59,10 @@ class tiktok:
                     self.usernames.append(line)
             if not len(self.usernames):
                 self.print_console("Console", "No usernames loaded in usernames.txt")
-                time.sleep(20)
-                os._exit(0)
         else:
             self.print_console("Console", "File usernames.txt not found")
-            time.sleep(20)
-            os._exit(0)
+        time.sleep(20)
+        os._exit(0)
 
     
     def main(self):
