@@ -74,8 +74,8 @@ class tiktok:
         self.load_usernames()
         threads = int(input(f"       {Fore.WHITE}[{Fore.RED}Console{Fore.WHITE}] Threads: "))
         print()
-        if threads >= 20: #To prevent ratelimits
-            threads = 20
+        if threads >= 5: #To prevent ratelimits
+            threads = 5
         
         def thread_starter():
             self.check_username(self.usernames[self.counter])
