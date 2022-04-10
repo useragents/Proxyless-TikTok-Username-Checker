@@ -55,7 +55,7 @@ class tiktok:
  
     def load_usernames(self):
         if not os.path.exists("usernames.txt"):
-            self.print_console("File usernames.txt not found")
+            self.print_console("Console", "File usernames.txt not found")
             time.sleep(10)
             os._exit(0)
         with open("usernames.txt", "r", encoding = "UTF-8") as f:
@@ -63,7 +63,7 @@ class tiktok:
                 line = line.replace("\n", "")
                 self.usernames.append(line)
             if not len(self.usernames):
-                self.print_console("No usernames loaded in proxies.txt")
+                self.print_console("Console", "No usernames loaded in proxies.txt")
                 time.sleep(10)
                 os._exit(0)
 
