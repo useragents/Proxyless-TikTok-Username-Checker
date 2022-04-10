@@ -49,6 +49,8 @@ class tiktok:
             elif r.status_code == 404:
                 self.available += 1
                 self.print_console("Available", username, Fore.GREEN)
+                with open("Available.txt", "a") as f:
+                        f.write(username + "\n")
             self.update_title()
  
     def load_usernames(self):
