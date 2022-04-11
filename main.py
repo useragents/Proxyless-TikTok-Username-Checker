@@ -92,3 +92,4 @@ class tiktok:
 
 obj = tiktok()
 obj.main()
+input()
