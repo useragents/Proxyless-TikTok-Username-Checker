@@ -1,5 +1,8 @@
-import requests, ctypes, time, os, threading
-from colorama import Fore
+try:
+    import requests, ctypes, time, os, threading
+    from colorama import Fore
+except ImportError:
+    input("Error while importing modules. Please install the modules in requirements.txt")
 
 ascii_text = """
         _   _ _    _        _    
