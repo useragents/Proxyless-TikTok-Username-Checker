@@ -62,11 +62,9 @@ class tiktok:
             time.sleep(10)
             os._exit(0)
         with open("usernames.txt", "r", encoding = "UTF-8") as f:
-            for line in f.readlines():
-                line = line.replace("\n", "")
-                self.usernames.append(line)
+            self.usernames = [line.replace("\n", "") for line in f.readlines()]
             if not len(self.usernames):
-                self.print_console("Console", "No usernames loaded in proxies.txt")
+                self.print_console("Console", "No usernames loaded in usernames.txt")
                 time.sleep(10)
                 os._exit(0)
 
