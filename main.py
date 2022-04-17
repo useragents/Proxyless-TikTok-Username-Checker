@@ -83,7 +83,8 @@ class tiktok:
     
     def main(self):
         os.system(clear)
-        ctypes.windll.kernel32.SetConsoleTitleW("TikTok Username Checker | Developed by @useragents on Github")
+        if clear == "cls":
+            ctypes.windll.kernel32.SetConsoleTitleW("TikTok Username Checker | Developed by @useragents on Github")
         print(Fore.RED + ascii_text)
         self.load_usernames()
         threads = int(input(f"       {Fore.WHITE}[{Fore.RED}Console{Fore.WHITE}] Threads: "))
