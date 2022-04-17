@@ -1,5 +1,5 @@
 try:
-    import requests, ctypes, time, os, threading
+    import requests, ctypes, time, os, threading, platform
     from colorama import Fore
 except ImportError:
     input("Error while importing modules. Please install the modules in requirements.txt")
@@ -12,6 +12,12 @@ ascii_text = """
        | |_| |   <| || (_) |   < 
         \__|_|_|\_\\__\___/|_|\ _\\
   """
+
+
+if platform.system() == "Windows":
+    clear = "cls"
+else:
+    clear = "clear"
 
 class tiktok:
 
@@ -76,7 +82,7 @@ class tiktok:
 
     
     def main(self):
-        os.system("cls")
+        os.system(clear)
         ctypes.windll.kernel32.SetConsoleTitleW("TikTok Username Checker | Developed by @useragents on Github")
         print(Fore.RED + ascii_text)
         self.load_usernames()
