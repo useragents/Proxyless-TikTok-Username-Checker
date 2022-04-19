@@ -44,7 +44,7 @@ class tiktok:
         self.safe_print(f"       {Fore.WHITE}[{color}{status}{Fore.WHITE}] {arg}")
     
     def check_username(self, username):
-        if username.is_digit():
+        if username.isdigit():
             self.unavailable += 1
             self.print_console("Unavailable", username)
             return
