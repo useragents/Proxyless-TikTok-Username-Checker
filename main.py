@@ -61,7 +61,7 @@ class tiktok:
                 self.print_console("Unavailable", username)
             elif r.status_code == 404:
                 self.available += 1
-                self.print_console("Available", username, Fore.GREEN)
+                self.print_console("Available or Banned", username, Fore.GREEN)
                 with open("Available.txt", "a") as f:
                         f.write(username + "\n")
             self.update_title()
