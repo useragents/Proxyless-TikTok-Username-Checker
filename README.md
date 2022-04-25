@@ -23,5 +23,5 @@
 
 ### Please note
 
-This script only allows you to use a maximum of 5 threads to prevent ratelimits to keep this script proxyless, I am not responsible for your actions using this script.
+This script only allows you to use a maximum of 5 threads to prevent ratelimits to keep this script proxyless, I am not responsible for your actions using this script. This script was made for educational purposes.
 
