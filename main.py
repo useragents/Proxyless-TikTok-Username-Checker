@@ -76,7 +76,7 @@ class tiktok:
                 line = line.replace("\n", "")
                 self.usernames.append(line)
             if not len(self.usernames):
-                self.print_console("Console", "No usernames loaded in proxies.txt")
+                self.print_console("Console", "No usernames loaded in usernames.txt")
                 time.sleep(10)
                 os._exit(0)
 
