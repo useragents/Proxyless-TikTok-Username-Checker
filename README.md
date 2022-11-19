@@ -4,7 +4,7 @@
   # Proxyless TikTok Username Checker
   
 <h1>
-🌟 Join my Discord server <a href="https://discord.gg/rDGsC2rwVv">here</a> 🌟
+🌟 Join my Discord server <a href="https://discord.gg/NrnKpUYjWR">here</a> 🌟
 </h1>
   Loops through a list of usernames to check if they are available or unavailable. Click <a href="https://github.com/useragents/Proxyless-TikTok-Username-Checker/issues">here</a> to report bugs.
   
