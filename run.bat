@@ -1,2 +1,0 @@
-py main.py
-PAUSE

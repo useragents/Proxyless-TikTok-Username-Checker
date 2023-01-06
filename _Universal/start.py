@@ -1,3 +1,5 @@
+# Linux and cloud machine compatible code (Removes update_title for linux)
+
 try:
     import requests, ctypes, time, os, threading, platform
     from colorama import Fore
@@ -5,17 +7,20 @@ except ImportError:
     input("Error while importing modules. Please install the modules in requirements.txt")
 
 ascii_text = """
-        _   _ _    _        _    
-       | | (_) |  | |      | |   
-       | |_ _| | _| |_ ___ | | __
-       | __| | |/ / __/ _ \| |/ /
-       | |_| |   <| || (_) |   < 
-        \__|_|_|\_\\__\___/|_|\ _\\
+           _   _ _    _        _    
+          | | (_) |  | |      | |   
+          | |_ _| | _| |_ ___ | | __
+          | __| | |/ / __/ _ \| |/ /
+          | |_| |   <| || (_) |   < 
+           \__|_|_|\_\\__\___/|_|\ _\\
   """
 
-
+# Platform checks
 if platform.system() == "Windows":
+    windows = True
     clear = "cls"
+if platform.system() == "Linux":
+    linux = True
 else:
     clear = "clear"
 
@@ -28,12 +33,6 @@ class tiktok:
         self.unavailable = 0
         self.available = 0
         self.counter = 0
-
-    def update_title(self):
-        remaining = len(self.usernames) - (self.available + self.unavailable)
-        ctypes.windll.kernel32.SetConsoleTitleW(
-            f"TikTok Username Checker | Available: {self.available} | Unavailable: {self.unavailable} | Checked: {(self.available + self.unavailable)} | Remaining: {remaining} | Developed by @useragents on Github"
-        )
     
     def safe_print(self, arg):
         self.lock.acquire()
@@ -43,6 +42,7 @@ class tiktok:
     def print_console(self, status, arg, color = Fore.RED):
         self.safe_print(f"       {Fore.WHITE}[{color}{status}{Fore.WHITE}] {arg}")
     
+    # Categorize the usernames into available and unavailable containers (Files)
     def check_username(self, username):
         if username.isdigit():
             self.unavailable += 1
@@ -64,8 +64,8 @@ class tiktok:
                 self.print_console("Available or Banned", username, Fore.GREEN)
                 with open("Available.txt", "a") as f:
                         f.write(username + "\n")
-            self.update_title()
- 
+    
+    # Load usernames from .txt file
     def load_usernames(self):
         if not os.path.exists("usernames.txt"):
             self.print_console("Console", "File usernames.txt not found")
@@ -80,10 +80,10 @@ class tiktok:
                 time.sleep(10)
                 os._exit(0)
 
-    
+    # This function glues every function together into a loop (Very fast)
     def main(self):
         os.system(clear)
-        if clear == "cls":
+        if windows == "True":
             ctypes.windll.kernel32.SetConsoleTitleW("TikTok Username Checker | Developed by @useragents on Github")
         print(Fore.RED + ascii_text)
         self.load_usernames()
@@ -107,3 +107,6 @@ class tiktok:
 obj = tiktok()
 obj.main()
 input()
+
+
+# OPEN SOURCE IS THE BEST SOURCE
